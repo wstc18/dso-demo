@@ -38,8 +38,18 @@ pipeline {
             }
           }
         }
+        stage('Docker BnP') {
+          steps {
+            container('kaniko') {
+              sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd`
+              --insecure --skip-tls-verify --cache=true
+              --destination=docker.io/timeconsumer22/dso-demo'
+            }
+          }
+        }
       }
-    }
+    }   
+
 
     stage('Deploy to Dev') {
       steps {
