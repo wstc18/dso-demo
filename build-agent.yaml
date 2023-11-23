@@ -61,7 +61,7 @@ spec:
         sources:
           - secret:
               name: regcred
-              namespace: ci
+              #namespace: ci
               items:
                 - key: .dockerconfigjson
                   path: config.json
