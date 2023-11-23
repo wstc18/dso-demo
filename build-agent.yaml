@@ -65,9 +65,9 @@ spec:
       #         items:
       #           - key: .dockerconfigjson
       #             path: config.json
+    - name: jenkins-docker-cfg
       secret:
-        - name: regcred
-          secretName: regcred
-          items:
-            - key: .dockerconfigjson
-              path: config.json
+        secretName: regcred
+        items:
+          - key: .dockerconfigjson
+            path: config.json
