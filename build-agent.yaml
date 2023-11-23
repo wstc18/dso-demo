@@ -40,6 +40,9 @@ spec:
         - sleep
       args:
         - 99d
+      env:
+        - name: container
+          value: kube
       volumeMounts:
         - name: jenkins-docker-cfg
           mountPath: /kaniko/.docker
