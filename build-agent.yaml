@@ -66,8 +66,8 @@ spec:
       #           - key: .dockerconfigjson
       #             path: config.json
       secret:
-        name: regcred
-        secretName: regcred
-        items:
-          - key: .dockerconfigjson
-            path: config.json
+        - name: regcred
+          secretName: regcred
+          items:
+            - key: .dockerconfigjson
+              path: config.json
