@@ -2,7 +2,7 @@
 FROM maven:3.8.7-openjdk-18 AS BUILD
 WORKDIR /app
 COPY .  .
-RUN mvn package -DskipTests && 
+RUN mvn package -DskipTests
 
 # stage 1 - package app to run
 FROM openjdk:19-jdk-alpine3.16 AS RUN
