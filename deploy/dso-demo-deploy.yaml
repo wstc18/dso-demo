@@ -26,10 +26,11 @@ spec:
           capabilities:
             drop:
               - ALL
-            priviledged: false
-            allowPriviledgeEscalation: false
-            runsAsNonRoot: true
-            runAsUser: 1000
+          privileged: false
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 1000
+          readOnlyRootFilesystem: true
         resources:
           requests:
             cpu: "50m"
@@ -37,4 +38,9 @@ spec:
           limits:
             cpu: "250m"
             memory: "256Mi"
+        volumeMounts:
+          - name: tmp
+            mountPath: /tmp
+      volumes:
+        - name: tmp
 status: {}
